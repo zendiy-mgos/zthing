@@ -37,6 +37,9 @@ struct mgos_zthing;
 #define MGOS_ZTHING_ENV_DEVICEID "${device_id}"
 #define MGOS_ZTHING_ENV_THINGID "${zthing_id}"
 
+#define MGOS_ZTHING_STR_ON "ON"
+#define MGOS_ZTHING_STR_OFF "OFF"
+
 #define MGOS_ZTHING_EVENT_BASE MGOS_EVENT_BASE('Z', 'T', 'N')
 enum mgos_zthing_event {
   MGOS_EV_ZTHING_CREATED = MGOS_ZTHING_EVENT_BASE, 
