@@ -43,8 +43,8 @@ bool mgos_zthing_init() {
   s_context->version = 1;
   SLIST_INIT(&s_context->handles);
 
-  LOG(LL_INFO, ("MGOS_ZTHING_EVENT_BASE %d",
-    MGOS_ZTHING_EVENT_BASE));
+  /* LOG(LL_INFO, ("MGOS_ZTHING_EVENT_BASE %d",
+    MGOS_ZTHING_EVENT_BASE)); */
     
   return true;
 }

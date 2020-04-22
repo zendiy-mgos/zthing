@@ -8,8 +8,8 @@ let ZenThing = {
   ACT_STATE_GET: 1,
 
   // Event codes.  
-  EV_CREATED: 1000, 
-  EV_STATE_UPDATED: 1000,
+  EV_CREATED: 1515474432, 
+  EV_STATE_UPDATED: 1515474433,
 
   _proto: {
   },
