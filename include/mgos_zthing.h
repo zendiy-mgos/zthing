@@ -23,6 +23,10 @@
 #include "common/queue.h"
 #include "mgos_zthing_utils.h"
 
+#ifdef MGOS_HAVE_MJS
+#include "mjs.h"
+#endif /* MGOS_HAVE_MJS */
+
 #ifdef __cplusplus
 extern "C" {
 #endif
