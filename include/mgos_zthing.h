@@ -51,12 +51,27 @@ enum mgos_zthing_state_act {
   MGOS_ZTHING_STATE_GET
 };
 
+#ifdef MGOS_HAVE_MJS
+
+#define MJS_ZTHING_DESCR                                                          \
+  {"id", offsetof(struct mgos_zthing, id), MJS_STRUCT_FIELD_TYPE_CHAR_PTR, NULL}, \
+  {"type", offsetof(struct mgos_zthing, type), MJS_STRUCT_FIELD_TYPE_INT, NULL},
+
+#endif /* MGOS_HAVE_MJS */
+
+/* WARN: if you change MGOS_ZTHING_BASE below,
+   you must update the above MJS_ZTHING_DESCR as well. */
+
 #define MGOS_ZTHING_BASE            \
   char *id;                         \
   int type;                         \
   SLIST_ENTRY(mgos_zthing) entry;
 
 #define MGOS_ZTHING(id, type) {id, type}
+
+
+/* WARN: if you change the struct 'mgos_zthing' below,
+   you must update the above MJS_ZTHING_DESCR as well. */
 
 /* Generic and semi-opaque ZenThing handle */
 struct mgos_zthing {
