@@ -1,3 +1,3 @@
 # ZenThing
 ## Overview
-A Mongoose OS library for Zen Things ecosystem.
+A Mongoose OS library for ZenThings ecosystem.
