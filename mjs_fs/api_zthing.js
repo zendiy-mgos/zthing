@@ -4,6 +4,8 @@ let ZenThing = {
   TYPE_SENSOR: 1,
   TYPE_ACTUATOR: 3,
 
+  NO_TICKS: 0,
+
   _onCreate: [],
   // register on-create handler
   _onCreateSub: function(f) {
