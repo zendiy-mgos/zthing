@@ -35,6 +35,10 @@ struct mg_zthing_ctx *mg_zthing_ctx_get() {
 
 
 bool mgos_zthing_init() {
+  if (!mgos_event_register_base(MGOS_ZTHING_EVENT_BASE, "ZenThing events")) {
+    return false;
+  }
+
   /* Create the context */
   s_context = calloc(1, sizeof(struct mg_zthing_ctx));
   if (!s_context) return false;
