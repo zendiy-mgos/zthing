@@ -29,7 +29,7 @@ let ZenThing = {
     this._things.push(t);
     return true;
   },
-  _getTFromH: function(h) {
+  getFromHandle: function(h) {
     for (let i = 0; i < this._things.length; ++i) {
       if (h === this._things[i].handle) {
         return this._things[i];
