@@ -1,6 +1,10 @@
 let ZenThing = {
   _free: ffi('void free(void *)'),
 
+  _getSafe: function(obj, val) {
+  	return ((obj === null || obj === undefined) ? val : obj);
+  },
+
   TYPE_SENSOR: 1,
   TYPE_ACTUATOR: 3,
 
