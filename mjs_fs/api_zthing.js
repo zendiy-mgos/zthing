@@ -36,6 +36,12 @@ let ZenThing = {
       }
     }
   },
+  getHandle: function(t) {
+    if (t && t.handle) {
+      return t.handle;
+    }
+    return null;
+  },
 
   RESULT_ERROR: -1,
  
