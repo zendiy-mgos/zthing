@@ -22,6 +22,7 @@
 #include "mgos_event.h"
 #include "common/queue.h"
 #include "mgos_zthing_utils.h"
+#include "mgos_zvariant.h"
 
 #ifdef __cplusplus
 extern "C" {
