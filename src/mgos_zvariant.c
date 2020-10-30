@@ -38,7 +38,7 @@ bool mgos_zvariant_float_set(struct mgos_zvariant *v, float value) {
 bool mgos_zvariant_integer_get(struct mgos_zvariant *v, int *value) {
   if (v && (v->type == ZVARIANT_INT) && value) {
     *value = v->i;
-    reurn true;
+    return true;
   }
   return false;
 }
@@ -46,7 +46,7 @@ bool mgos_zvariant_integer_get(struct mgos_zvariant *v, int *value) {
 bool mgos_zvariant_long_get(struct mgos_zvariant *v, long *value) {
   if (v && (v->type == ZVARIANT_LONG) && value) {
     *value = v->l;
-    reurn true;
+    return true;
   }
   return false;
 }
@@ -54,7 +54,7 @@ bool mgos_zvariant_long_get(struct mgos_zvariant *v, long *value) {
 bool mgos_zvariant_bool_get(struct mgos_zvariant *v, bool *value) {
   if (v && (v->type == ZVARIANT_BOOL) && value) {
     *value = v->b;
-    reurn true;
+    return true;
   }
   return false;
 }
@@ -62,7 +62,7 @@ bool mgos_zvariant_bool_get(struct mgos_zvariant *v, bool *value) {
 bool mgos_zvariant_double_get(struct mgos_zvariant *v, double *value) {
   if (v && (v->type == ZVARIANT_DOUBLE) && value) {
     *value = v->d;
-    reurn true;
+    return true;
   }
   return false;
 }
@@ -70,7 +70,7 @@ bool mgos_zvariant_double_get(struct mgos_zvariant *v, double *value) {
 bool mgos_zvariant_float_get(struct mgos_zvariant *v, float *value) {
   if (v && (v->type == ZVARIANT_FLOAT) && value) {
     *value = v->f;
-    reurn true;
+    return true;
   }
   return false;
 }
