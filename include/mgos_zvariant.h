@@ -47,11 +47,11 @@ struct mgos_zvariant {
   union mgos_zvariant_value value;
 };
 
-void mgos_zvariant_integer_set(struct mgos_zvariant *v, int value);
-void mgos_zvariant_long_set(struct mgos_zvariant *v, long value);
-void mgos_zvariant_bool_set(struct mgos_zvariant *v, bool value);
-void mgos_zvariant_double_set(struct mgos_zvariant *v, double value);
-void mgos_zvariant_float_set(struct mgos_zvariant *v, float value);
+bool mgos_zvariant_integer_set(struct mgos_zvariant *v, int value);
+bool mgos_zvariant_long_set(struct mgos_zvariant *v, long value);
+bool mgos_zvariant_bool_set(struct mgos_zvariant *v, bool value);
+bool mgos_zvariant_double_set(struct mgos_zvariant *v, double value);
+bool mgos_zvariant_float_set(struct mgos_zvariant *v, float value);
 
 bool mgos_zvariant_integer_get(struct mgos_zvariant *v, int *value);
 bool mgos_zvariant_long_get(struct mgos_zvariant *v, long *value);
