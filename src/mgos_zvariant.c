@@ -10,6 +10,27 @@ bool mgos_zvariant_nav_set(struct mgos_zvariant *v) {
   return true;
 }
 
+bool mgos_zvariant_equals(struct mgos_zvariant *v1, struct mgos_zvariant *v2) {
+  if (v1 && v2) {
+    if (v1->type != v2->type) return false;
+    switch(v1->type) {
+      case ZVARIANT_INT:
+        return (v1->value.i == v2->value.i);
+      case ZVARIANT_LONG:
+        return (v1->value.l == v2->value.l);
+      case ZVARIANT_FLOAT:
+        return (v1->value.f == v2->value.f);
+      case ZVARIANT_DOUBLE:
+        return (v1->value.d == v2->value.d);
+      case ZVARIANT_BOOL:
+        return (v1->value.b == v2->value.b);
+      default:
+        return false;
+    }
+  }
+  return (v1 == NULL && v2 == NULL);
+}
+
 bool mgos_zvariant_integer_set(struct mgos_zvariant *v, int value) {
   if (!v) return false;
   v->type = ZVARIANT_INT;
