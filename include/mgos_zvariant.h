@@ -42,11 +42,15 @@ union mgos_zvariant_value {
    bool b;
 };
 
+#define MGOS_ZVARIANT_NAV { ZVARIANT_UNKNOWN }
 struct mgos_zvariant {
   enum mgos_zvariant_type type;
   union mgos_zvariant_value value;
 };
 
+bool mgos_zvariant_nav_set(struct mgos_zvariant *v);
+bool mgos_zvariant_is_nav(struct mgos_zvariant *v);
+                                 
 bool mgos_zvariant_integer_set(struct mgos_zvariant *v, int value);
 bool mgos_zvariant_long_set(struct mgos_zvariant *v, long value);
 bool mgos_zvariant_bool_set(struct mgos_zvariant *v, bool value);
