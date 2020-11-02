@@ -48,8 +48,6 @@ struct mgos_zvariant {
   union mgos_zvariant_value value;
 };
   
-static struct mgos_zvariant mgos_zvariant_nav = MGOS_ZVARIANT_NAV;
-
 bool mgos_zvariant_equals(struct mgos_zvariant *v1, struct mgos_zvariant *v2);
   
 bool mgos_zvariant_nav_set(struct mgos_zvariant *v);
