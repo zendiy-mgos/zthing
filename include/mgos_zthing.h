@@ -46,7 +46,8 @@ struct mgos_zthing;
 #define MGOS_ZTHING_EVENT_BASE MGOS_EVENT_BASE('Z', 'T', 'N')
 enum mgos_zthing_event {
   MGOS_EV_ZTHING_CREATED = MGOS_ZTHING_EVENT_BASE, 
-  MGOS_EV_ZTHING_STATE_UPDATED
+  MGOS_EV_ZTHING_STATE_UPDATED,
+  MGOS_EV_ZTHING_UPDATE_STATE
 };
 
 enum mgos_zthing_state_act {
