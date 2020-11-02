@@ -24,6 +24,8 @@ bool mgos_zvariant_equals(struct mgos_zvariant *v1, struct mgos_zvariant *v2) {
         return (v1->value.d == v2->value.d);
       case ZVARIANT_BOOL:
         return (v1->value.b == v2->value.b);
+      case ZVARIANT_UNKNOWN:
+        return true;
       default:
         return false;
     }
