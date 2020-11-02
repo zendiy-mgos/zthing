@@ -28,9 +28,31 @@ bool mgos_zvariant_equals(struct mgos_zvariant *v1, struct mgos_zvariant *v2) {
         return true;
       default:
         return false;
-    }
+    };
   }
   return (v1 == NULL && v2 == NULL);
+}
+
+bool mgos_zvariant_copy(struct mgos_zvariant *src, struct mgos_zvariant *dest) {
+  if (src) {
+    switch(src->type) {
+      case ZVARIANT_INT:
+        return mgos_zvariant_integer_set(dest, src->value.i);
+      case ZVARIANT_LONG:
+        return mgos_zvariant_long_set(dest, src->value.l);
+      case ZVARIANT_FLOAT:
+        return mgos_zvariant_float_set(dest, src->value.f);
+      case ZVARIANT_DOUBLE:
+        return mgos_zvariant_double_set(dest, src->value.d);
+      case ZVARIANT_BOOL:
+        return mgos_zvariant_bool_set(dest, src->value.b);
+      case ZVARIANT_UNKNOWN:
+        return mgos_zvariant_nav_set(dest);
+      default:
+        return false;
+    };
+  }
+  return false;
 }
 
 bool mgos_zvariant_integer_set(struct mgos_zvariant *v, int value) {
