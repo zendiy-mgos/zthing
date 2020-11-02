@@ -52,6 +52,7 @@ let ZenThing = {
   // Event codes.  
   EV_CREATED: 1515474432, 
   EV_STATE_UPDATED: 1515474433,
+  EV_UPDATE_STATE: 1515474434,
 
   _proto: {
   },
