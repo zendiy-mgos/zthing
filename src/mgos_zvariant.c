@@ -1,5 +1,15 @@
 #include "mgos_zvariant.h"
 
+bool mgos_zvariant_is_nav(struct mgos_zvariant *v) {
+  return (v ? v->type == ZVARIANT_UNKNOWN : true);
+}
+
+bool mgos_zvariant_nav_set(struct mgos_zvariant *v) {
+  if (!v) return false;
+  v->type = ZVARIANT_UNKNOWN;
+  return true;
+}
+
 bool mgos_zvariant_integer_set(struct mgos_zvariant *v, int value) {
   if (!v) return false;
   v->type = ZVARIANT_INT;
