@@ -49,7 +49,9 @@ struct mgos_zvariant {
 };
   
 bool mgos_zvariant_equals(struct mgos_zvariant *v1, struct mgos_zvariant *v2);
-  
+
+bool mgos_zvariant_copy(struct mgos_zvariant *src, struct mgos_zvariant *dest);
+    
 bool mgos_zvariant_nav_set(struct mgos_zvariant *v);
 bool mgos_zvariant_is_nav(struct mgos_zvariant *v);
                                  
