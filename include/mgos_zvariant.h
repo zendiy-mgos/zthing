@@ -25,6 +25,9 @@
 extern "C" {
 #endif
 
+#define MGOS_ZVARIANT_PTR_CAST(v, t) (*(t*)&v->value)
+#define MGOS_ZVARIANT_CAST(v, t) (*(t*)&v.value)
+
 enum mgos_zvariant_type {
   ZVARIANT_UNKNOWN,
   ZVARIANT_BOOL,
@@ -44,10 +47,10 @@ union mgos_zvariant_value {
 
 #define MGOS_ZVARIANT_NAV { ZVARIANT_UNKNOWN }
 struct mgos_zvariant {
-  enum mgos_zvariant_type type;
   union mgos_zvariant_value value;
+  enum mgos_zvariant_type type;
 };
-  
+
 bool mgos_zvariant_equals(struct mgos_zvariant *v1, struct mgos_zvariant *v2);
 
 bool mgos_zvariant_copy(struct mgos_zvariant *src, struct mgos_zvariant *dest);
