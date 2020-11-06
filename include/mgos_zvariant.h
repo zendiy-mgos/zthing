@@ -51,6 +51,8 @@ struct mgos_zvariant {
   union mgos_zvariant_value value;
 };
 
+const char *mgos_zvariant_type_name(struct mgos_zvariant *v);
+
 bool mgos_zvariant_equals(struct mgos_zvariant *v1, struct mgos_zvariant *v2);
 
 bool mgos_zvariant_copy(struct mgos_zvariant *src, struct mgos_zvariant *dest);
