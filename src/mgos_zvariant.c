@@ -1,5 +1,27 @@
 #include "mgos_zvariant.h"
 
+const char *mgos_zvariant_type_name(struct mgos_zvariant *v) {
+  if (v) {
+    switch(v1->type) {
+      case ZVARIANT_INT:
+        return "integer";
+      case ZVARIANT_LONG:
+        return "long";
+      case ZVARIANT_FLOAT:
+        return "float";
+      case ZVARIANT_DOUBLE:
+        return "double";
+      case ZVARIANT_BOOL:
+        return "bool";
+      case ZVARIANT_UNKNOWN:
+        return "unknown";
+      default:
+        break;
+    };
+  }
+  return "undefined";
+}
+
 bool mgos_zvariant_is_nav(struct mgos_zvariant *v) {
   return (v ? v->type == ZVARIANT_UNKNOWN : true);
 }
