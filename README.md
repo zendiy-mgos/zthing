@@ -25,7 +25,7 @@ enum mgos_zthing_state_updated_notify_mode {
   ZTHING_STATE_UPDATED_NOTIFY_ALWAIS,
 };
 ```
-Update state mode. A ZenThing instance notify that its state is changed raising the `MGOS_EV_ZTHING_STATE_UPDATED` event. The event is raised according one of these values.
+State-updated notify modes. A ZenThing instance notify that its state is changed raising the `MGOS_EV_ZTHING_STATE_UPDATED` event. The event is raised according one of these values.
 
 |Value||
 |--|--|
