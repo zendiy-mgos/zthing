@@ -47,8 +47,8 @@ union mgos_zvariant_value {
 
 #define MGOS_ZVARIANT_NAV { ZVARIANT_UNKNOWN }
 struct mgos_zvariant {
-  union mgos_zvariant_value value;
   enum mgos_zvariant_type type;
+  union mgos_zvariant_value value;
 };
 
 bool mgos_zvariant_equals(struct mgos_zvariant *v1, struct mgos_zvariant *v2);
