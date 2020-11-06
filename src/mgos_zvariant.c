@@ -2,7 +2,7 @@
 
 const char *mgos_zvariant_type_name(struct mgos_zvariant *v) {
   if (v) {
-    switch(v1->type) {
+    switch(v->type) {
       case ZVARIANT_INT:
         return "integer";
       case ZVARIANT_LONG:
