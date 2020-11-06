@@ -56,10 +56,10 @@ enum mgos_zthing_state_act {
   MGOS_ZTHING_STATE_GET
 };
 
-enum mgos_zthing_notify_update_state_mode {
-  ZTHING_NOTIFY_UPDATE_STATE_NONE,
-  ZTHING_NOTIFY_UPDATE_STATE_IF_CHANGED,
-  ZTHING_NOTIFY_UPDATE_STATE_ALWAIS,
+enum mgos_zthing_state_updated_notify_mode {
+  ZTHING_STATE_UPDATED_NOTIFY_NONE,
+  ZTHING_STATE_UPDATED_NOTIFY_IF_CHANGED,
+  ZTHING_STATE_UPDATED_NOTIFY_ALWAIS,
 };
 
 #define MGOS_ZTHING_BASE            \
