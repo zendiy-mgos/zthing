@@ -9,6 +9,12 @@ let ZenThing = {
   TYPE_ACTUATOR: 3,
 
   NO_TICKS: 0,
+  
+  STATE_UPDATED_NOTIFY: {
+    NONE: 0,
+    IF_CHANGED: 1,
+    ALWAYS: 2
+  },
 
   _onCreate: [],
   // register on-create handler
