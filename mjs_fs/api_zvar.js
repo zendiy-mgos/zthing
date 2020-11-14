@@ -26,46 +26,44 @@ let ZenVar = {
   },
   
   bool: function(x, val) {
-    let t = ZenVar.typeOf(x);
     if (val === undefined) {
       // get
+      let t = ZenVar.typeOf(x);
       return (t === ZenVar.TYPE_BOOL ? ZenVar._bg(x) : null);
     } else {
       // set
-      return (t === ZenVar.TYPE_BOOL ? ZenVar._bs(x, val) : false);
+      return ZenVar._bs(x, val);
     }
   },
   
   int: function(x, val) {
-    let t = ZenVar.typeOf(x);
     if (val === undefined) {
       // get
+      let t = ZenVar.typeOf(x);
       return (t === ZenVar.TYPE_INT ? ZenVar._ig(x) : null);
     } else {
       // set
-      return (t === ZenVar.TYPE_INT ? ZenVar._is(x, val) : false);
+      return ZenVar._is(x, val);
     }
   },
   
   double: function(x, val) {
-    let t = ZenVar.typeOf(x);
     if (val === undefined) {
       // get
-      return (t === ZenVar.TYPE_DOUBLE ? ZenVar._dg(x) : NaN);
+      ZenVar._dg(x);
     } else {
       // set
-      return (t === ZenVar.TYPE_DOUBLE ? ZenVar._ds(x, val) : false);
+      return ZenVar._ds(x, val);
     }
   },
   
   float: function(x, val) {
-    let t = ZenVar.typeOf(x);
     if (val === undefined) {
       // get
-      return (t === ZenVar.TYPE_FLOAT ? ZenVar._fg(x) : NaN);
+      return ZenVar._fg(x);
     } else {
       // set
-      return (t === ZenVar.TYPE_FLOAT ? ZenVar._fs(x, val) : false);
+      return ZenVar._fs(x, val);
     }
   },
 };
