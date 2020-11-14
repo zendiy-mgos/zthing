@@ -31,7 +31,7 @@ extern "C" {
 #endif
 
 #ifdef MGOS_HAVE_MJS
-static const struct mjs_c_struct_member mjs_zvariant_descr[];
+static const struct mjs_c_struct_member *mjs_zvariant_descr;
 #endif /* MGOS_HAVE_MJS */
 
 #define MGOS_ZVARIANT_PTR_CAST(v, t) (*(t*)&v->value)
