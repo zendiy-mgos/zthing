@@ -57,9 +57,13 @@ struct mgos_zvariant {
 };
   
 #ifdef MGOS_HAVE_MJS
+mjs_val_t mjs_zvariant_value_size(struct mjs *mjs, void *ap) {
+  return sizeof(union mgos_zvariant_value);
+}
+
 static const struct mjs_c_struct_member mjs_zvariant_descr[] = {
   {"type", offsetof(struct mgos_zvariant, type), MJS_STRUCT_FIELD_TYPE_INT, NULL},
-  {"value", offsetof(struct mgos_zvariant, value), MJS_STRUCT_FIELD_TYPE_DOUBLE, NULL},
+  {"value", offsetof(struct mgos_zvariant, value), MJS_STRUCT_FIELD_TYPE_CUSTOM, mjs_zvariant_value_size},
   {NULL, 0, MJS_STRUCT_FIELD_TYPE_INVALID, NULL},
 };
 #endif /* MGOS_HAVE_MJS */
