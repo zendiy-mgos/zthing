@@ -47,11 +47,11 @@ let ZenVar = {
     }
   },
   
-  bouble: function(var, val) {
+  double: function(var, val) {
     let t = ZenVar.typeOf(var);
     if (val === undefined) {
       // get
-      return (t === ZenVar.TYPE_DOUBLE ? ZenVar._dg(var) : null);
+      return (t === ZenVar.TYPE_DOUBLE ? ZenVar._dg(var) : NaN);
     } else {
       // set
       return (t === ZenVar.TYPE_DOUBLE ? ZenVar._ds(var, val) : false);
@@ -62,7 +62,7 @@ let ZenVar = {
     let t = ZenVar.typeOf(var);
     if (val === undefined) {
       // get
-      return (t === ZenVar.TYPE_FLOAT ? ZenVar._fg(var) : null);
+      return (t === ZenVar.TYPE_FLOAT ? ZenVar._fg(var) : NaN);
     } else {
       // set
       return (t === ZenVar.TYPE_FLOAT ? ZenVar._fs(var, val) : false);
