@@ -20,6 +20,7 @@
 
 #include <stdlib.h>
 #include <stdbool.h>
+#include <math.h>
 
 #ifdef __cplusplus
 extern "C" {
