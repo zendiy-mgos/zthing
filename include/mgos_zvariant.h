@@ -22,9 +22,17 @@
 #include <stdbool.h>
 #include <math.h>
 
+#ifdef MGOS_HAVE_MJS
+#include "mjs.h"
+#endif /* MGOS_HAVE_MJS */ 
+
 #ifdef __cplusplus
 extern "C" {
 #endif
+
+#ifdef MGOS_HAVE_MJS
+static const struct mjs_c_struct_member mjs_zvariant_descr[];
+#endif /* MGOS_HAVE_MJS */
 
 #define MGOS_ZVARIANT_PTR_CAST(v, t) (*(t*)&v->value)
 #define MGOS_ZVARIANT_CAST(v, t) (*(t*)&v.value)
