@@ -46,7 +46,7 @@ union mgos_zvariant_value {
    bool b;
 };
 
-#define MGOS_ZVARIANT_NAV { ZVARIANT_UNKNOWN }
+#define MGOS_ZVARIANT_NAV { ZVARIANT_UNKNOWN, NULL }
 struct mgos_zvariant {
   enum mgos_zvariant_type type;
   union mgos_zvariant_value value;
