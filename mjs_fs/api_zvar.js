@@ -21,7 +21,7 @@ let ZenVar = {
     return ZenVar._tof(x);
   },
   
-  isNaV(x) {
+  isNaV: function(x) {
     return ZenVar._isnav(x);
   },
   
