@@ -15,7 +15,7 @@ let ZenVar = {
   TYPE_INT: 2,
   TYPE_LONG: 3,
   TYPE_DOUBLE: 4,
-  TYPE_FLOA: 5,
+  TYPE_FLOAT: 5,
   
   typeOf: function(var) {
     return ZenVar._tof(var);
