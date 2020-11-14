@@ -1,5 +1,5 @@
 let ZenVar = {
-  _tof: ffi(''),
+  _tof: ffi('int mjs_zvariant_type_get(void *)'),
   _bs: ffi('bool mgos_zvariant_bool_set(void *, bool)'),
   _bg: ffi('bool mjs_zvariant_bool_get(void *)'),
   _is: ffi('bool mgos_zvariant_long_set(void *, bool)'),
@@ -19,12 +19,19 @@ let ZenVar = {
   },
   
   bool: function(var, val) {
+    let t = ZenVar.typeOf(var);
     if (val === undefined) {
       // get
-      return ZenVar._bg(var);
+      if (t === ZenVar.TYPE_BOOL) {
+        return ZenVar._bg(var);
+      }
+      return null;
     } else {
       // set
-      return ZenVar._bs(var, val);
+      if (t === ZenVar.TYPE_BOOL) {
+        return ZenVar._bs(var, val);
+      }
+      return false;
     }
   },
   
@@ -35,11 +42,17 @@ let ZenVar = {
       if (t === ZenVar.TYPE_INT || t === ZenVar.TYPE_LONG) {
         return ZenVar._ig(var);
       } else if (t === ZenVar.TYPE_FLOAT || t === ZenVar.TYPE_DOUBLE) {
+        return ZenVar._fg(var);
       }
       return null;
     } else {
       // set
-      return ZenVar._is(var, val);
+      if (t === ZenVar.TYPE_INT || t === ZenVar.TYPE_LONG) {
+        return ZenVar._is(var, val);
+      } else if (t === ZenVar.TYPE_FLOAT || t === ZenVar.TYPE_DOUBLE) {
+        return ZenVar._fs(var, val);
+      }
+      return false;
     }
   },
 };
