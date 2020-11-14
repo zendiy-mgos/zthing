@@ -166,7 +166,7 @@ bool mjs_zvariant_bool_get(struct mgos_zvariant *v) {
   return MGOS_ZVARIANT_PTR_CAST(v, bool);
 }
 
-int mjs_zvariant_int_get(struct mgos_zvariant *v) {
+int mjs_zvariant_integer_get(struct mgos_zvariant *v) {
   if (v->type == ZVARIANT_INT) return MGOS_ZVARIANT_PTR_CAST(v, int);
   return -1;
 }
