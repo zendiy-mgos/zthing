@@ -180,6 +180,9 @@ float mjs_zvariant_float_get(struct mgos_zvariant *v) {
   return NAN;
 }
 
+mjs_val_t mjs_zvariant_value_size(struct mjs *mjs, void *ap) {
+  return sizeof(union mgos_zvariant_value);
+}
 const struct mjs_c_struct_member *mjs_zvariant_descr_get(void) {
   return mjs_zvariant_descr;
 };
