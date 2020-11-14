@@ -167,8 +167,7 @@ bool mjs_zvariant_bool_get(struct mgos_zvariant *v) {
 }
 
 int mjs_zvariant_integer_get(struct mgos_zvariant *v) {
-  if (v->type == ZVARIANT_INT) return MGOS_ZVARIANT_PTR_CAST(v, int);
-  return -1;
+  return MGOS_ZVARIANT_PTR_CAST(v, int);
 }
 
 double mjs_zvariant_double_get(struct mgos_zvariant *v) {
