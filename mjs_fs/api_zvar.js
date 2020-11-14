@@ -17,55 +17,55 @@ let ZenVar = {
   TYPE_DOUBLE: 4,
   TYPE_FLOAT: 5,
   
-  typeOf: function(var) {
-    return ZenVar._tof(var);
+  typeOf: function(x) {
+    return ZenVar._tof(x);
   },
   
-  isNaV(var) {
-    return ZenVar._isnav(var);
+  isNaV(x) {
+    return ZenVar._isnav(x);
   },
   
-  bool: function(var, val) {
-    let t = ZenVar.typeOf(var);
+  bool: function(x, val) {
+    let t = ZenVar.typeOf(x);
     if (val === undefined) {
       // get
-      return (t === ZenVar.TYPE_BOOL ? ZenVar._bg(var) : null);
+      return (t === ZenVar.TYPE_BOOL ? ZenVar._bg(x) : null);
     } else {
       // set
-      return (t === ZenVar.TYPE_BOOL ? ZenVar._bs(var, val) : false);
+      return (t === ZenVar.TYPE_BOOL ? ZenVar._bs(x, val) : false);
     }
   },
   
-  int: function(var, val) {
-    let t = ZenVar.typeOf(var);
+  int: function(x, val) {
+    let t = ZenVar.typeOf(x);
     if (val === undefined) {
       // get
-      return (t === ZenVar.TYPE_INT ? ZenVar._ig(var) : null);
+      return (t === ZenVar.TYPE_INT ? ZenVar._ig(x) : null);
     } else {
       // set
-      return (t === ZenVar.TYPE_INT ? ZenVar._is(var, val) : false);
+      return (t === ZenVar.TYPE_INT ? ZenVar._is(x, val) : false);
     }
   },
   
-  double: function(var, val) {
-    let t = ZenVar.typeOf(var);
+  double: function(x, val) {
+    let t = ZenVar.typeOf(x);
     if (val === undefined) {
       // get
-      return (t === ZenVar.TYPE_DOUBLE ? ZenVar._dg(var) : NaN);
+      return (t === ZenVar.TYPE_DOUBLE ? ZenVar._dg(x) : NaN);
     } else {
       // set
-      return (t === ZenVar.TYPE_DOUBLE ? ZenVar._ds(var, val) : false);
+      return (t === ZenVar.TYPE_DOUBLE ? ZenVar._ds(x, val) : false);
     }
   },
   
-  float: function(var, val) {
-    let t = ZenVar.typeOf(var);
+  float: function(x, val) {
+    let t = ZenVar.typeOf(x);
     if (val === undefined) {
       // get
-      return (t === ZenVar.TYPE_FLOAT ? ZenVar._fg(var) : NaN);
+      return (t === ZenVar.TYPE_FLOAT ? ZenVar._fg(x) : NaN);
     } else {
       // set
-      return (t === ZenVar.TYPE_FLOAT ? ZenVar._fs(var, val) : false);
+      return (t === ZenVar.TYPE_FLOAT ? ZenVar._fs(x, val) : false);
     }
   },
 };
