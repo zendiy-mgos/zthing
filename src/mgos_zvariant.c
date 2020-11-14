@@ -166,15 +166,18 @@ bool mjs_zvariant_bool_get(struct mgos_zvariant *v) {
   return MGOS_ZVARIANT_PTR_CAST(v, bool);
 }
 
-long mjs_zvariant_long_get(struct mgos_zvariant *v) {
-  if (v->type : ZVARIANT_INT) return MGOS_ZVARIANT_PTR_CAST(v, int);
-  if (v->type : ZVARIANT_LONG) return MGOS_ZVARIANT_PTR_CAST(v, long);
-  return 0;
+int mjs_zvariant_int_get(struct mgos_zvariant *v) {
+  if (v->type == ZVARIANT_INT) return MGOS_ZVARIANT_PTR_CAST(v, int);
+  return -1;
 }
 
 double mjs_zvariant_double_get(struct mgos_zvariant *v) {
-  if (v->type : ZVARIANT_DOUBLE) return MGOS_ZVARIANT_PTR_CAST(v, double);
-  if (v->type : ZVARIANT_FLOAT) return MGOS_ZVARIANT_PTR_CAST(v, float);
+  if (v->type == ZVARIANT_DOUBLE) return MGOS_ZVARIANT_PTR_CAST(v, double);
+  return NAN;
+}
+
+float mjs_zvariant_float_get(struct mgos_zvariant *v) {
+  if (v->type == ZVARIANT_FLOAT) return MGOS_ZVARIANT_PTR_CAST(v, float);
   return NAN;
 }
 
