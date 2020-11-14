@@ -1,5 +1,9 @@
 #include "mgos_zvariant.h"
 
+#ifdef MGOS_HAVE_MJS
+#include "mjs.h"
+#endif /* MGOS_HAVE_MJS */
+
 const char *mgos_zvariant_type_name(struct mgos_zvariant *v) {
   if (v) {
     switch(v->type) {
@@ -151,3 +155,23 @@ bool mgos_zvariant_float_get(struct mgos_zvariant *v, float *value) {
   }
   return false;
 }
+
+#ifdef MGOS_HAVE_MJS
+
+enum mgos_zvariant_type mjs_zvariant_type_get(struct mgos_zvariant *v) {
+  return (v != NULL ? v->type : ZVARIANT_UNKNOWN);
+}
+
+bool mjs_zvariant_bool_get(struct mgos_zvariant *v) {
+  return MGOS_ZVARIANT_PTR_CAST(v, bool);
+}
+
+long mjs_zvariant_long_get(struct mgos_zvariant *v) {
+  return MGOS_ZVARIANT_PTR_CAST(v, long);
+}
+
+double mjs_zvariant_double_get(struct mgos_zvariant *v) {
+  return MGOS_ZVARIANT_PTR_CAST(v, double);
+}
+
+#endif /* MGOS_HAVE_MJS */
