@@ -3,9 +3,10 @@ let ZenVar = {
   _bs: ffi('bool mgos_zvariant_bool_set(void *, bool)'),
   _bg: ffi('bool mjs_zvariant_bool_get(void *)'),
   _is: ffi('bool mgos_zvariant_long_set(void *, bool)'),
-  _ig: ffi('bool mjs_zvariant_long_get(void *)'),
+  _ig: ffi('long mjs_zvariant_long_get(void *)'),
   _fs: ffi('bool mgos_zvariant_double_set(void *, bool)'),
-  _fg: ffi('bool mjs_zvariant_double_get(void *)'),
+  _fg: ffi('double mjs_zvariant_double_get(void *)'),
+  _isnav: ffi('bool mgos_zvariant_is_nav(void *)'),
   
   TYPE_UNKNOWN: 0,
   TYPE_BOOL: 1,
@@ -16,6 +17,10 @@ let ZenVar = {
   
   typeOf: function(var) {
     return ZenVar._tof(var);
+  },
+  
+  isNaV(var) {
+    return ZenVar._isnav(var);
   },
   
   bool: function(var, val) {
