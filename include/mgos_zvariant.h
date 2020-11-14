@@ -30,13 +30,6 @@
 extern "C" {
 #endif
 
-#ifdef MGOS_HAVE_MJS
-static const struct mjs_c_struct_member mjs_zvariant_descr[] = {
-  {"type", offsetof(struct mgos_zvariant, type), MJS_STRUCT_FIELD_TYPE_INT, NULL},
-  {NULL, 0, MJS_STRUCT_FIELD_TYPE_INVALID, NULL},
-};
-#endif /* MGOS_HAVE_MJS */
-
 #define MGOS_ZVARIANT_PTR_CAST(v, t) (*(t*)&v->value)
 #define MGOS_ZVARIANT_CAST(v, t) (*(t*)&v.value)
 
@@ -62,6 +55,13 @@ struct mgos_zvariant {
   enum mgos_zvariant_type type;
   union mgos_zvariant_value value;
 };
+  
+#ifdef MGOS_HAVE_MJS
+static const struct mjs_c_struct_member mjs_zvariant_descr[] = {
+  {"type", offsetof(struct mgos_zvariant, type), MJS_STRUCT_FIELD_TYPE_INT, NULL},
+  {NULL, 0, MJS_STRUCT_FIELD_TYPE_INVALID, NULL},
+};
+#endif /* MGOS_HAVE_MJS */
 
 const char *mgos_zvariant_type_name(struct mgos_zvariant *v);
 
