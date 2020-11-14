@@ -181,4 +181,13 @@ float mjs_zvariant_float_get(struct mgos_zvariant *v) {
   return NAN;
 }
 
+static const struct mjs_c_struct_member mjs_zvariant_descr[] = {
+  {"type", offsetof(struct mgos_zvariant, type), MJS_STRUCT_FIELD_TYPE_INT, NULL},
+  {NULL, 0, MJS_STRUCT_FIELD_TYPE_INVALID, NULL},
+};
+
+const struct mjs_c_struct_member *mjs_zvariant_descr_get(void) {
+  return mjs_zvariant_descr;
+};
+
 #endif /* MGOS_HAVE_MJS */
