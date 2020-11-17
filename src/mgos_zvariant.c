@@ -128,6 +128,29 @@ bool mgos_zvariant_equals(struct mgos_zvariant *v1, struct mgos_zvariant *v2) {
   return (v1 == NULL && v2 == NULL);
 }
 
+bool mgos_zvariant_3equals(struct mgos_zvariant *v1, struct mgos_zvariant *v2) {
+  if (v1 != NULL && v2 != NULL) {
+    if (v1->type != v3->type) return false;
+    switch(v1->type) {
+      case ZVARIANT_INT:
+        return (v1->value.i == v2->value.i);
+      case ZVARIANT_LONG:
+        return (v1->value.l == v2->value.l);
+      case ZVARIANT_FLOAT:
+        return (v1->value.f == v2->value.f);
+      case ZVARIANT_DOUBLE:
+        return (v1->value.d == v2->value.d);
+      case ZVARIANT_BOOL:
+        return (v1->value.b == v2->value.b);
+      case ZVARIANT_UNKNOWN:
+        return true;
+      default:
+        return false;
+    };
+  }
+  return (v1 == NULL && v2 == NULL);
+}
+
 bool mgos_zvariant_copy(struct mgos_zvariant *src, struct mgos_zvariant *dest) {
   if (src) {
     switch(src->type) {
