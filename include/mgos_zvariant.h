@@ -71,16 +71,16 @@ const char *mgos_zvariant_type_name(struct mgos_zvariant *v);
 bool mgos_zvariant_equals(struct mgos_zvariant *v1, struct mgos_zvariant *v2);
 bool mgos_zvariant_3equals(struct mgos_zvariant *v1, struct mgos_zvariant *v2);
 
-bool mgos_zvariant_copy(struct mgos_zvariant *src, struct mgos_zvariant *dest);
+struct mgos_zvariant *mgos_zvariant_copy(struct mgos_zvariant *src, struct mgos_zvariant *dest);
     
-bool mgos_zvariant_nav_set(struct mgos_zvariant *v);
+struct mgos_zvariant *mgos_zvariant_nav_set(struct mgos_zvariant *v);
 bool mgos_zvariant_is_nav(struct mgos_zvariant *v);
                                  
-bool mgos_zvariant_integer_set(struct mgos_zvariant *v, int value);
-bool mgos_zvariant_long_set(struct mgos_zvariant *v, long value);
-bool mgos_zvariant_bool_set(struct mgos_zvariant *v, bool value);
-bool mgos_zvariant_double_set(struct mgos_zvariant *v, double value);
-bool mgos_zvariant_float_set(struct mgos_zvariant *v, float value);
+struct mgos_zvariant *mgos_zvariant_integer_set(struct mgos_zvariant *v, int value);
+struct mgos_zvariant *mgos_zvariant_long_set(struct mgos_zvariant *v, long value);
+struct mgos_zvariant *mgos_zvariant_bool_set(struct mgos_zvariant *v, bool value);
+struct mgos_zvariant *mgos_zvariant_double_set(struct mgos_zvariant *v, double value);
+struct mgos_zvariant *mgos_zvariant_float_set(struct mgos_zvariant *v, float value);
 
 bool mgos_zvariant_integer_get(struct mgos_zvariant *v, int *value);
 bool mgos_zvariant_long_get(struct mgos_zvariant *v, long *value);
