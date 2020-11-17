@@ -37,7 +37,7 @@ bool mgos_zvariant_nav_set(struct mgos_zvariant *v) {
 }
 
 bool mgos_zvariant_equals(struct mgos_zvariant *v1, struct mgos_zvariant *v2) {
-  if (v1 && v2) {
+  if (v1 != NULL && v2 != NULL) {
     if (v1->type != v2->type) return false;
     switch(v1->type) {
       case ZVARIANT_INT:
