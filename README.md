@@ -17,7 +17,7 @@ ZenThing listening events and publishing events. Use `mgos_event_add_handler()` 
 |MGOS_EV_ZTHING_CREATED|Publishing|Raised Raised when a new ZenThing instance is created.|
 |MGOS_EV_ZTHING_STATE_UPDATED|Publishing|Raised when the state of a ZenThing instance has been updated. This event is raised according the instance configuration (see the `mgos_zthing_notify_update_state_mode` enum).|
 |MGOS_EV_ZTHING_UPDATE_STATE|Listening|Send this message to a Zenthing instance to force it updating its state.|
-### enum mgos_zthing_state_updated_notify_mode
+### enum mgos_zthing_upd_notify_mode
 ```c
 enum mgos_zthing_upd_notify_mode {
   ZTHING_UPD_NOTIFY_NONE,
