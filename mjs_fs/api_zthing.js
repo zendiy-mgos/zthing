@@ -10,7 +10,7 @@ let ZenThing = {
 
   NO_TICKS: 0,
   
-  STATE_UPDATED_NOTIFY: {
+  STATE_UPD_NOTIFY: {
     NONE: 0,
     IF_CHANGED: 1,
     ALWAYS: 2
