@@ -96,6 +96,12 @@ struct mgos_zthing *mgos_zthing_get(const char* id);
 /* Close the ZenThing handle */
 void mgos_zthing_close(struct mgos_zthing *handle);
 
+/* Attach an extension to the handle */
+bool mgos_zthing_ext_attach(struct mgos_zthing *handle, const char* ext_name, void *ext);
+  
+/* Attach an extension to the handle */
+void *mgos_zthing_ext_get(struct mgos_zthing *handle, const char* ext_name);
+
 #ifdef __cplusplus
 }
 #endif /* __cplusplus */
