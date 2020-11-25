@@ -58,7 +58,7 @@ bool mgos_zthing_ext_attach(struct mgos_zthing *handle, const char* ext_name, vo
   return (e != NULL);
 }
 
-bool mgos_zthing_ext_get(struct mgos_zthing *handle, const char* ext_name) {
+void *mgos_zthing_ext_get(struct mgos_zthing *handle, const char* ext_name) {
   if (handle == NULL || !ext_name) return NULL;
   struct mg_zthing_ext_ctx_e *e;
   SLIST_FOREACH(e, &s_exts_context->entries, entry) {
