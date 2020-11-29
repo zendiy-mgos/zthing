@@ -47,7 +47,7 @@ void mgos_zthing_close(struct mgos_zthing *handle) {
 }
 
 bool mgos_zthing_ext_attach(struct mgos_zthing *handle, const char* ext_name, void *ext) {
-  if (handle == NULL || ext == NULL || !ext_name) return false;
+  if (!handle || !ext || !ext_name) return false;
   struct mg_zthing_ext_ctx_e *e = calloc(1, sizeof(struct mg_zthing_ext_ctx_e));
   e->handle = handle;
   e->ext = ext;
@@ -59,7 +59,7 @@ bool mgos_zthing_ext_attach(struct mgos_zthing *handle, const char* ext_name, vo
 }
 
 void *mgos_zthing_ext_get(struct mgos_zthing *handle, const char* ext_name) {
-  if (handle == NULL || !ext_name) return NULL;
+  if (!handle || !ext_name) return NULL;
   struct mg_zthing_ext_ctx_e *e;
   SLIST_FOREACH(e, &s_exts_context->entries, entry) {
     if ((((void *)e->handle) == ((void *)handle)) && (0 == strcasecmp(e->name, ext_name))) return e;
