@@ -49,10 +49,10 @@ void mgos_zthing_close(struct mgos_zthing *handle) {
 bool mgos_zthing_ext_attach(struct mgos_zthing *handle, const char* ext_name, void *ext) {
   if (!handle || !ext || !ext_name) return false;
   struct mg_zthing_ext_ctx_e *e = calloc(1, sizeof(struct mg_zthing_ext_ctx_e));
-  e->handle = handle;
-  e->ext = ext;
-  e->name = ext_name;
   if (e) {
+    e->handle = handle;
+    e->ext = ext;
+    e->name = ext_name;
     SLIST_INSERT_HEAD(&s_exts_context->entries, e, entry);
   }
   return (e != NULL);
